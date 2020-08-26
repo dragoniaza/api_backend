@@ -1,0 +1,3432 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "CouchAPI",
+    "description": "this is sample document",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://10.252.3.229:8000/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "BBAGC",
+      "description": "this api for get data of bbagc"
+    },
+    {
+      "name": "BBGF_PROVINCE",
+      "description": "this api for get data of bbagc_province"
+    },
+    {
+      "name": "bbgfsummary_bbagc",
+      "description": "this api for get data of bbgfsummary_bbagc"
+    },
+    {
+      "name": "bbgfsummary_bbministry",
+      "description": "this api for get data of bbgfsummary_bbministry"
+    },
+    {
+      "name": "bbgroupbyaspect",
+      "description": "this api for get data of bbgroupbyaspect"
+    },
+    {
+      "name": "bbministry",
+      "description": "this api for get data of bbministry"
+    },
+    {
+      "name": "bbstg_bbagc",
+      "description": "this api for get data of bbstg_bbagc"
+    },
+    {
+      "name": "bbstg_bbministry",
+      "description": "this api for get data of bbstg_bbministry"
+    },
+    {
+      "name": "bbtransactiontype_bbagc",
+      "description": "this api for get data of bbtransactiontype_bbagc"
+    },
+    {
+      "name": "bbtransactiontype_bbministry",
+      "description": "this api for get data of bbtransactiontype_bbministry"
+    },
+    {
+      "name": "cgdcontract",
+      "description": "this api for get data of cgdcontract"
+    }
+  ],
+  "paths": {
+    "/bbagc/years": {
+      "get": {
+        "tags": [
+          "BBAGC"
+        ],
+        "summary": "year",
+        "operationId": "v1_parameter_years_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start year to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end year to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify year of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbagc/agc_codes": {
+      "get": {
+        "tags": [
+          "BBAGC"
+        ],
+        "summary": "agc_codes",
+        "operationId": "v1_parameter_agc_codes_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify year of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "No API key not found",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbagc/agc_names": {
+      "get": {
+        "tags": [
+          "BBAGC"
+        ],
+        "summary": "agc_names",
+        "operationId": "v1_parameter_agc_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start date of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end date of date.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "No API key not found",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfprovince/prov_codes": {
+      "get": {
+        "tags": [
+          "BBGF_PROVINCE"
+        ],
+        "summary": "year",
+        "operationId": "v1_parameter_prov_codes_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start prov_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end prov_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify prov_codes of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfprovince/prov_gf_codes": {
+      "get": {
+        "tags": [
+          "BBGF_PROVINCE"
+        ],
+        "summary": "prov_gf_codes",
+        "operationId": "v1_parameter_prov_gf_codes_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start prov_gf_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end prov_gf_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify prov_gf_codes of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfprovince/prov_names": {
+      "get": {
+        "tags": [
+          "BBGF_PROVINCE"
+        ],
+        "summary": "prov_names",
+        "operationId": "v1_parameter_prov_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start prov_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end prov_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify prov_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfprovince/prov_ids": {
+      "get": {
+        "tags": [
+          "BBGF_PROVINCE"
+        ],
+        "summary": "prov_ids",
+        "operationId": "v1_parameter_prov_ids_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start prov_ids to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end prov_ids to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify prov_ids of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbagc/agc_codes": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbagc"
+        ],
+        "summary": "agc_codes",
+        "operationId": "v1_parameter__bbgfsummary_bbagc_agc_codes_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify agc_codes of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbagc/dept_name": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbagc"
+        ],
+        "summary": "dept_name",
+        "operationId": "v1_parameter_bbgfsummary_bbagc_dept_name_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify dept_name of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbagc/percent": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbagc"
+        ],
+        "summary": "percent",
+        "operationId": "v1_parameter_bbgfsummary_bbagc_percent_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify percent of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbagc/total_bb": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbagc"
+        ],
+        "summary": "total_bb",
+        "operationId": "v1_parameter_bbgfsummary_bbagc_total_bb_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_bb to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_bb to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_bb of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbagc/total_gf": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbagc"
+        ],
+        "summary": "total_gf",
+        "operationId": "v1_parameter_bbgfsummary_bbagc_total_gf_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_gf to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_gf to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_gf of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbagc/years": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbagc"
+        ],
+        "summary": "years",
+        "operationId": "v1_parameter_bbgfsummary_bbagc_years_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start years to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end years to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify years of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbministry/years": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbministry"
+        ],
+        "summary": "years",
+        "operationId": "v1_parameter_bbgfsummary_bbministry_years_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start years to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end years to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify years of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbministry/dept_name": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbministry"
+        ],
+        "summary": "dept_name",
+        "operationId": "v1_parameter_bbgfsummary_bbministry_dept_name_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify dept_name of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbministry/total_bb": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbministry"
+        ],
+        "summary": "total_bb",
+        "operationId": "v1_parameter_bbgfsummary_bbministry_total_bb_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_bb to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_bb to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_bb of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbministry/total_gf": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbministry"
+        ],
+        "summary": "total_gf",
+        "operationId": "v1_parameter_bbgfsummary_bbministry_total_gf_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_gf to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_gf to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_gf of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgfsummary_bbministry/percent": {
+      "get": {
+        "tags": [
+          "bbgfsummary_bbministry"
+        ],
+        "summary": "percent",
+        "operationId": "v1_parameter_bbgfsummary_bbministry_percent_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify percent of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgroupbyaspect/amounts": {
+      "get": {
+        "tags": [
+          "bbgroupbyaspect"
+        ],
+        "summary": "amounts",
+        "operationId": "v1_parameter_bbgroupbyaspect_amounts_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify amounts of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgroupbyaspect/names": {
+      "get": {
+        "tags": [
+          "bbgroupbyaspect"
+        ],
+        "summary": "names",
+        "operationId": "v1_parameter_bbgroupbyaspect_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgroupbyaspect/name_ens": {
+      "get": {
+        "tags": [
+          "bbgroupbyaspect"
+        ],
+        "summary": "name_ens",
+        "operationId": "v1_parameter_bbgroupbyaspect_name_ens_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start name_ens to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end name_ens to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify name_ens of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgroupbyaspect/total_aspect_group": {
+      "get": {
+        "tags": [
+          "bbgroupbyaspect"
+        ],
+        "summary": "total_aspect_group",
+        "operationId": "v1_parameter_bbgroupbyaspect_total_aspect_group_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_aspect_group to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_aspect_group to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_aspect_group of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbgroupbyaspect/total_amount": {
+      "get": {
+        "tags": [
+          "bbgroupbyaspect"
+        ],
+        "summary": "total_amount",
+        "operationId": "v1_parameter_bbgroupbyaspect_total_amount_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_amount to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_amount to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_amount of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbministry/years": {
+      "get": {
+        "tags": [
+          "bbministry"
+        ],
+        "summary": "years",
+        "operationId": "v1_parameter_bbministry_years_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start years to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end years to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify years of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbministry/min_names": {
+      "get": {
+        "tags": [
+          "bbministry"
+        ],
+        "summary": "min_names",
+        "operationId": "v1_parameter_bbministry_min_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start min_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end min_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify min_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbministry/min_codes": {
+      "get": {
+        "tags": [
+          "bbministry"
+        ],
+        "summary": "min_codes",
+        "operationId": "v1_parameter_bbministry_min_codes_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start min_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end min_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify min_codes of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/agc_codes": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "agc_codes",
+        "operationId": "v1_parameter_bbstg_bbagc_agc_codes_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify agc_codes of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/dept_name": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "dept_name",
+        "operationId": "v1_parameter_bbstg_bbagc_dept_name_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify dept_name of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/total_stg": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "total_stg",
+        "operationId": "v1_parameter_bbstg_bbagc_total_stg_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_stg to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_stg to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_stg of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/total_amount": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "total_amount",
+        "operationId": "v1_parameter_bbstg_bbagc_total_amount_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_amount to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_amount to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_amount of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/total_percent": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "total_percent",
+        "operationId": "v1_parameter_bbstg_bbagc_total_percent_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_percent of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/stg_names": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "stg_names",
+        "operationId": "v1_parameter_bbstg_bbagc_stg_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start stg_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end stg_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify stg_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/amounts": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "amounts",
+        "operationId": "v1_parameter_bbstg_bbagc_amounts_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify amounts of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbagc/percents": {
+      "get": {
+        "tags": [
+          "bbstg_bbagc"
+        ],
+        "summary": "percents",
+        "operationId": "v1_parameter_bbstg_bbagc_percents_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start percents to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end percents to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify percents of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbministry/percents": {
+      "get": {
+        "tags": [
+          "bbstg_bbministry"
+        ],
+        "summary": "percents",
+        "operationId": "v1_parameter_bbstg_bbministry_percents_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start percents to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end percents to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify percents of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbministry/dept_name": {
+      "get": {
+        "tags": [
+          "bbstg_bbministry"
+        ],
+        "summary": "dept_name",
+        "operationId": "v1_parameter_bbstg_bbministry_dept_name_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end dept_name to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify dept_name of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbministry/total_stg": {
+      "get": {
+        "tags": [
+          "bbstg_bbministry"
+        ],
+        "summary": "total_stg",
+        "operationId": "v1_parameter_bbstg_bbministry_total_stg_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_stg to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_stg to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_stg of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbministry/total_amount": {
+      "get": {
+        "tags": [
+          "bbstg_bbministry"
+        ],
+        "summary": "total_amount",
+        "operationId": "v1_parameter_bbstg_bbministry_total_amount_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_amount to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_amount to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_amount of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbministry/total_percent": {
+      "get": {
+        "tags": [
+          "bbstg_bbministry"
+        ],
+        "summary": "total_percent",
+        "operationId": "v1_parameter_bbstg_bbministry_total_percent_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start total_percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end total_percent to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify total_percent of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbministry/stg_names": {
+      "get": {
+        "tags": [
+          "bbstg_bbministry"
+        ],
+        "summary": "stg_names",
+        "operationId": "v1_parameter_bbstg_bbministry_stg_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start stg_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end stg_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify stg_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbstg_bbministry/amounts": {
+      "get": {
+        "tags": [
+          "bbstg_bbministry"
+        ],
+        "summary": "amounts",
+        "operationId": "v1_parameter_bbstg_bbministry_amounts_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify amounts of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbagc/agc_codes": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbagc"
+        ],
+        "summary": "agc_codes",
+        "operationId": "v1_parameter_bbtransactiontype_bbagc_agc_codes_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end agc_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify agc_codes of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbagc/agc_names": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbagc"
+        ],
+        "summary": "agc_names",
+        "operationId": "v1_parameter_bbtransactiontype_bbagc_agc_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start agc_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end agc_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify agc_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbagc/transaction_type_names": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbagc"
+        ],
+        "summary": "transaction_type_names",
+        "operationId": "v1_parameter_bbtransactiontype_bbagc_transaction_type_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start transaction_type_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end transaction_type_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify transaction_type_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbagc/amounts": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbagc"
+        ],
+        "summary": "amounts",
+        "operationId": "v1_parameter_bbtransactiontype_bbagc_amounts_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify amounts of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbministry/amounts": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbministry"
+        ],
+        "summary": "amounts",
+        "operationId": "v1_parameter_bbtransactiontype_bbministry_amounts_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end amounts to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify amounts of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbministry/transaction_type_names": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbministry"
+        ],
+        "summary": "transaction_type_names",
+        "operationId": "v1_parameter_bbtransactiontype_bbministryc_transaction_type_names_get",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start transaction_type_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end transaction_type_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify transaction_type_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbministry/min_codes": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbministry"
+        ],
+        "summary": "min_codes",
+        "operationId": "v1_parameter_bbtransactiontype_bbministryc_min_codes",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start min_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end min_codes to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify min_codes of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    },
+    "/bbtransactiontype_bbministry/min_names": {
+      "get": {
+        "tags": [
+          "bbtransactiontype_bbministry"
+        ],
+        "summary": "min_names",
+        "operationId": "v1_parameter_bbtransactiontype_bbministryc_min_names",
+        "parameters": [
+          {
+            "name": "startkey",
+            "in": "query",
+            "description": "set start min_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "endkey",
+            "in": "query",
+            "description": "set end min_names to query data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "key",
+            "in": "query",
+            "description": "set specify min_names of data",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "api-key",
+            "in": "query",
+            "description": "an authorization key",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "$ref": "#/components/schemas/Data"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "get header with authentication",
+            "content": {}
+          },
+          "404": {
+            "description": "get header with api key",
+            "content": {}
+          }
+        },
+        "security": [
+          {
+            "db_auth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          },
+          "value": {
+            "$ref": "#/components/schemas/Data_value"
+          }
+        },
+        "example": {
+          "id": "id",
+          "value": {
+            "NaturalGasFuturesContract2": 6,
+            "NaturalGasFuturesContract1": 0
+          },
+          "key": "key"
+        }
+      },
+      "Data_value": {
+        "type": "object",
+        "properties": {
+          "NaturalGasFuturesContract1": {
+            "type": "integer"
+          },
+          "NaturalGasFuturesContract2": {
+            "type": "integer"
+          }
+        },
+        "example": {
+          "NaturalGasFuturesContract2": 6,
+          "NaturalGasFuturesContract1": 0
+        }
+      }
+    },
+    "securitySchemes": {
+      "db_auth": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}
